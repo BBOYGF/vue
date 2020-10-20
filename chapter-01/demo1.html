@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <guowen v-for="item in items" v-bind:fan="item"></guowen>
+</div>
+<script>
+    Vue.component("guowen",{
+        props:['fan'],
+        template:'<li>{{fan}}</li>'
+    });
+
+   var vm=new Vue({
+       el:"#app",
+       data:{
+           items:["aa","bb","cc"]
+       },
+   });
+
+</script>
+</body>
+</html>
